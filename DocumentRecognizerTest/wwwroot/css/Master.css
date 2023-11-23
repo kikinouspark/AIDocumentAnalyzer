@@ -1,0 +1,562 @@
+
+#headerLogo {	
+    width: 250px;
+    height: 35px;
+    background-repeat: no-repeat;
+	background-image: url('https://Internal/Images/Logo.svg');
+}
+
+
+body {
+    font-family: Cera, Calibri;
+    background: #d1d1d1;
+    line-height: 24px;
+	font-size: 18px;
+    color: #53565A;
+    font-weight:400;
+}
+
+p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+div > img[url$='.svg'] {
+    width: 100%;
+    height: 100%;
+}
+
+#form, #aspnetForm {
+    background: white;
+    padding: 0 65px;
+    max-width: 1300px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 10px auto;
+    /*border-top: 10px solid #0099A8;
+    border-bottom: 10px solid #0099A8;*/
+}
+
+#main-container, #main-aside {
+    width: 100%;
+    margin: 0px;
+    margin-bottom: 20px;
+}
+
+    #main-container > article > h1,
+    #main-container > article > header > h1 {
+        font-size: 26px;
+        font-weight: normal;
+    }
+
+#title {
+    font-size: 22px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #00A5BD;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+/*---Header/Footer
+            ---------------------------------------------*/
+#main-header {
+    width: 100%;
+    margin: 15px 0px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+    #main-header > div, #main-header > nav {
+        margin: 15px auto;
+        display: flex;
+        min-width: calc(50% - 15px);
+    }
+
+        #main-header > div:first-child, #main-header > nav:first-child {
+            margin-left: 15px;
+        }
+
+        #main-header > div:last-child, #main-header > nav:last-child {
+            margin-right: 15px;
+        }
+
+    #main-header > div {
+        display: flex;
+        box-sizing: border-box;
+    }
+
+        #main-header > div > h1 {
+            margin: 5px 0 0 20px;
+            font-size: 24px;
+            font-weight: normal;
+        }
+
+    #main-header > nav {
+    }
+
+        #main-header > nav > ul {
+            list-style: none;
+            display: flex;
+            width: 100%;
+            margin: 0;
+			justify-content: flex-end;
+        }
+
+            #main-header > nav > ul > li {
+                display: flex;
+                position: relative;
+            }
+
+                #main-header > nav > ul > li > button,
+                #main-header > nav > ul > li > a {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    margin: 1px 0;
+                    padding: 9px 20px 13px;
+                    /*border: 2px solid #53565A;*/
+					border: 0;
+                    border-radius: 10px;
+                    box-sizing: border-box;
+                    color: #53565A;
+                    text-decoration: none;
+                    background: white;
+                    transition: all 0.25s;
+                    line-height: normal;
+                }
+
+                    #main-header > nav > ul > li > button[disabled],
+                    #main-header > nav > ul > li > a[disabled] {
+                        cursor: default;
+                    }
+
+                    /*#main-header > nav > ul > li > button:not([disabled]):hover,
+                    #main-header > nav > ul > li > a:not([disabled]):hover {
+                        background: #53565A;
+                        color: #F3F3F3;
+                    }*/
+
+                    #main-header > nav > ul > li > button:focus,
+                    #main-header > nav > ul > li > a:focus {
+                        outline: none;
+                    }
+
+                    #main-header > nav > ul > li > button:hover:after,
+                    #main-header > nav > ul > li > a:hover:after {
+                        width: 100%;
+                    }
+
+                    #main-header > nav > ul > li > button:after,
+                    #main-header > nav > ul > li > a:after {
+                        content: '';
+                        height: 4px;
+                        width: 0;
+                        position: absolute;
+                        bottom: 0;
+                        background-color: #00A5BD;
+                        left: 0;
+                        transition: all .2s linear;
+                    }
+
+                    #main-header > nav > ul > li > button[disabled]:after,
+                    #main-header > nav > ul > li > a[disabled]:after {
+                        background-color: #d1d1d1;
+                    }
+
+    #main-header .svgLogo {
+        width: 206px;
+        height: 35px;
+    }
+	#main-header .svgLogo.full {
+        width: 213px;
+        height: 60px;
+    }
+
+#footerLogo .svgLogo {
+    float: right;
+    width: 170px;
+    height: 30px;
+    padding: 10px 0px;
+}
+
+#main-footer {
+    width: 100%;
+    margin: 10px -65px 0;
+    padding: 20px 85px;
+    background: #00A5BD;
+    color: rgba(255, 255, 255, 0.5);
+    box-sizing: content-box;
+}
+#main-footer * {
+    color: rgba(255, 255, 255, 0.5);	
+}
+
+    #main-footer div.footer {
+        width: 100%;
+    }
+
+#footerCopyright {
+    font-size: 14px;
+}
+
+
+/*---Aside
+            ---------------------------------------------*/
+#main-aside section, div.box {
+    overflow: hidden;
+    width: calc(100% - 30px);
+    margin: 15px;
+    padding: 0 15px;
+    background: #F3F3F3;
+    border: solid 1px #E1E1E1;
+    box-sizing: border-box;
+}
+
+    #main-aside section h1, #main-aside section h2, #main-aside section h3, #main-aside section h4, #main-aside section h5, #main-aside section h6 {
+        /*color: #00A5BD;*/
+    }
+
+    #main-aside section h3 {
+        font-size: 17px;
+        font-weight: 700;
+    }
+
+    #main-aside section:last-child {
+        margin-bottom: 0px;
+    }
+
+/*---Inputs
+            ---------------------------------------------*/
+textarea {
+    min-height: 65px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+input[type="email"].clean, input[type="number"].clean, input[type="search"].clean, input[type="text"].clean,
+input[type="tel"].clean, input[type="url"].clean, input[type="password"].clean, input[type="date"].clean, input[type="datetime-local"].clean, textarea, select {
+    height: 38px;
+    padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+    background-color: #ffffff;
+    border: 1px solid #D1D1D1;
+    box-sizing: border-box;
+}
+    input[type="email"].clean:focus, input[type="number"].clean:focus, input[type="search"].clean:focus, input[type="text"].clean:focus,
+    input[type="tel"].clean:focus, input[type="url"].clean:focus, input[type="password"].clean:focus, textarea:focus, select:focus {
+        border: 1px solid #00A5BD;
+        outline: 0;
+    }
+
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"], input[type="number"], input[type="search"], input[type="text"],
+input[type="tel"], input[type="url"], input[type="password"], textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /*appearance: none;*/
+}
+
+input[type="checkbox"], input[type="radio"] {
+    display: inline;
+}
+
+input[type="file"] {
+	font-size: 14px;
+}
+
+table input[type="text"] {
+    width: 100px;
+}
+    /*---Buttons
+        ---------------------------------------------*/
+    button, input[type="button"], input[type="submit"], a.button {
+    border: 2px solid #53565A;
+    border-radius: 10px;
+    color: #53565A;
+    padding: 5px 10px;
+    background: transparent;
+    box-sizing: border-box;
+    transition: all 0.25s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+    button:not([disabled]):hover, input[type="button"]:not([disabled]):hover, input[type="submit"]:not([disabled]):hover, a.button:not([disabled]):hover {
+        background: #53565A;
+        border-color: #53565A;
+        color: #F3F3F3;
+        cursor: pointer;
+    }
+
+    button:focus, input[type="button"]:focus, input[type="submit"]:focus, a.button:focus {
+        outline: 1px dotted #53565A;
+    }
+
+    button.Estera, input[type="button"].Estera, input[type="submit"].Estera, a.button.Estera,
+    button.Ocorian, input[type="button"].Ocorian, input[type="submit"].Ocorian, a.button.Ocorian {
+        color: #FFFFFF;
+        font-weight: 700;
+        background-color: #00A5BD;
+        border-color: #00A5BD;
+        text-transform: uppercase;
+    }
+        button.Estera.button-primary,
+        button.Ocorian.button-primary {
+            background-color: #33C3F0;
+            border-color: #33C3F0;
+        }
+
+            button.Estera.button-primary:hover, button.Estera.button-primary:focus,
+            button.Ocorian.button-primary:hover, button.Ocorian.button-primary:focus {
+                background-color: #1EAEDB;
+                border-color: #1EAEDB;
+            }
+
+/*---Links
+            ---------------------------------------------*/
+a {
+    color: #00A5BD;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    a:visited {
+        color: #00A5BD;
+    }
+	a.button:visited {
+		color: #414042
+	}
+
+    a:hover {
+        color: #00DDF0;
+    }
+
+    a:focus {
+        outline: thin dotted;
+    }
+
+    a:hover, a:active {
+        outline: 0;
+    }
+
+    a.grey, a.gray, a.grey:visited, a.gray:visited {
+        color: #53565A;
+    }
+
+        a.grey:hover, a.gray:hover {
+            color: #75787C;
+        }
+
+/*---Tables
+            ---------------------------------------------*/
+table.Estera,
+table.Ocorian {
+    width: 100%;
+    border: 1px solid #E1E1E1;
+}
+
+    table.Estera th, table.Estera td,
+    table.Ocorian th, table.Ocorian td {
+        padding: 8px 12px;
+        text-align: left;
+        border: 1px solid #E1E1E1;
+    }
+
+        table.Estera th, table.Estera td.header,
+        table.Ocorian th, table.Ocorian td.header {
+            background-color: #E1E1E1;
+            white-space: nowrap;
+            /*border: 1px solid #E1E1E1;*/
+        }
+
+            table.Estera th.alternative, table.Estera td.alternative
+            table.Ocorian th.alternative, table.Ocorian td.alternative {
+                background-color: #00A5BD;
+                color: #fffff;
+                white-space: nowrap;
+                /*border: 1px solid #00A5BD;*/
+            }
+
+			
+/*---Email
+            ---------------------------------------------*/
+#form.Email
+{
+	padding: 0px 30px;
+	max-width: 1000px;
+	width:75%;
+	line-height:22px;
+	font-size:15px;
+	text-align:justify;
+}
+	#form.Email #main-header
+	{
+		margin-bottom:0;
+	}
+	#form.Email #main-footer
+	{
+		margin: 10px -30px 0;			
+		padding: 20px 50px;
+	}
+	
+.EmailSig{
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+	.EmailSig hr
+	{
+		border: 0.5px solid #00A5BD;
+	}
+	.EmailSig p.teal, .EmailSig span.teal, .EmailSig a.teal, .EmailSig a.teal:link, .EmailSig a.teal:hover, .EmailSig a.teal:visited
+	{
+		color:#00A5BD;margin:0;
+	}
+	.EmailSig p.grey, .EmailSig span.grey, .EmailSig a.grey, .EmailSig a.grey:link, .EmailSig a.grey:hover, .EmailSig a.grey:visited
+	{
+		color:#53565A;margin:0;
+	}
+	
+/*---Other
+            ---------------------------------------------*/
+ul, ol {
+    list-style: inside;
+    padding: 0;
+}
+ol {
+	list-style-type: decimal;
+}
+
+nav.bar > ul > li {
+    display: inline-block;
+    margin: 0 15px;
+    list-style: none;
+}
+    nav.bar > ul > li:first-child {
+        margin-left: 0px;
+    }
+    nav.bar > ul > li:last-child {
+        margin-right: 0px;
+    }
+	
+::-webkit-scrollbar {
+    background: #F0F0F0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #53565A;
+    border: 4px solid #F0F0F0;
+    border-radius: 10px;
+}
+/*@font-face {
+    font-family: Cera;
+    src: url(https:\\\\internal\\fonts\\Cera.woff);
+}
+*/
+
+/*---Spacing (Legacy)
+            ---------------------------------------------*/
+button.spacing {
+    margin-bottom: 1rem;
+}
+
+input.spacing, textarea.spacing, select.spacing, fieldsets.spacing {
+    margin-bottom: 1.5rem;
+}
+
+header.spacing, section.spacing, pre.spacing, blockquote.spacing, dl.spacing,
+figure.spacing, table.spacing, ul.spacing, ol.spacing, form.spacing {
+    margin-bottom: 2.5rem;
+}
+
+table.Estera.spacing table {
+    margin: 0;
+    border: 0;
+}
+
+    table.Estera.spacing table th, table.Estera.spacing table td,
+    table.Ocorian.spacing table th, table.Ocorian.spacing table td {
+        border: 0;
+    }
+
+div.table-wrapper.spacing {
+    overflow-x: auto;
+    margin-bottom: 2.5rem;
+}
+
+    div.table-wrapper.spacing table {
+        margin-bottom: 0;
+    }
+
+/*---Extra Classes
+            ---------------------------------------------*/
+
+span.help {
+    text-decoration: underline dotted grey;
+    cursor: help;
+    text-decoration-skip-ink: none;
+}
+
+.hidden, .hideme {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+    .visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+        clip: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        position: static;
+        width: auto;
+    }
+
+.invisible {
+    visibility: hidden;
+}
+
+.imgFAQ {
+    border: 2px solid #53565A;
+    max-width: 800px;
+}
+
+p.FAQfigure, p.FAQ {
+    border-left: 3px solid #00A5BD;
+    padding-left: 20px;
+}
+
+figure.FAQfigure, figure.FAQ {
+    display: table;
+    margin-left: 20px;
+}
+
+figcaption.FAQfigure, figcaption.FAQ {
+    display: table-caption;
+    caption-side: bottom;
+    margin: 5px 0;
+    padding: 5px 15px;
+    border-left: 3px solid #FF8200;
+    border-right: 3px solid #FF8200;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #FFF0DC;
+    background-color: rgba(255, 200, 100, .2);
+    font-style: italic;
+}
+
+

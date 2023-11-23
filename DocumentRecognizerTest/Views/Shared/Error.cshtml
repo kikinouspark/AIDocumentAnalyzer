@@ -1,0 +1,31 @@
+﻿@model DocumentRecognizerTest.Models.ErrorViewModel
+@{
+    ViewData["Title"] = "Test Document Recognizer";
+}
+
+<h3>@ViewData["Title"]... [@Model.PreviousPage]</h3>
+<p>Hello Dear User</p>
+
+<p>A system error has occurred. If you require assistance, please <a class="grey" href="mailto:testingmail@test.com">email support</a> to log a support ticket.</p>
+<p>The following error details should be included:</p>
+
+@if (!string.IsNullOrEmpty(Model.RequestId))
+{
+    <p><strong>Request ID:</strong>&nbsp;<code>@Model.RequestId</code></p>
+}
+@if (Model.IsErrorCode)
+{
+    <p><strong>Error Code:</strong>&nbsp;<code>@Model.ErrorCode</code></p>
+}
+<p><code>@Model.ErrorMessage</code></p>
+<p>Thank you,</p>
+<p>Laurent</p>
+
+@*<h3>Development Mode</h3>
+<p>
+    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
+</p>
+<p>
+    <strong>Development environment should not be enabled in deployed applications</strong>, as it can result in sensitive information from exceptions being displayed to end users.
+    For local debugging, development environment can be enabled by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>, and restarting the application.
+</p>*@

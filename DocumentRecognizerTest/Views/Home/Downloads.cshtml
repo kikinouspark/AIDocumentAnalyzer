@@ -1,0 +1,49 @@
+﻿@using DocumentRecognizerTest.Models
+@model List<FileListModel>
+
+@{
+    ViewData["Title"] = "1066Q";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    @Html.AntiForgeryToken()
+    <table>
+        <tr>
+            <th>Path Name</th>
+            <th>File Name</th>
+            <th> </th>
+            <th> </th>
+        </tr>
+        @foreach (FileListModel file in Model)
+        {
+    <tr>
+        <th>@file.Resid_EIN_name</th>
+        <td>@file.FileName</td>
+        <td>
+            <button type="button">
+                @Html.ActionLink("Download  ", "DownloadFile", new { fileName = file.FileName })
+            </button>
+        </td>
+        <td>
+            <button type="button">
+                @Html.ActionLink("   Report", "DownloadReport", new { fileName = file.FileName })
+            </button>
+        </td>
+    </tr>
+        }
+    </table>
+    <tr>
+        <button type="button">
+            @Html.ActionLink("Home", "Index")
+        </button>
+        @Html.ActionLink("Delete All Files", "DeleteAll")
+    </tr>
+
+</body>
+</html>

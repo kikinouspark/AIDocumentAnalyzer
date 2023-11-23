@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>AI Document Analysis Tool</title>
+    <meta name="description" content="AI Document Analysis Tool" />
+    <meta name="author" content="Laurent Duval" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <environment>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" type="image/x-icon" href="https://internal/Images/favicon.ico" />
+        <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+        <link type="text/css" href="~/css/Normalize.css" rel="stylesheet" />
+        <link type="text/css" href="~/css/Master.css?v=1" rel="stylesheet" />
+        <link type="text/css" rel="stylesheet" href="~/css/lclsite.css" />
+        <link href="~/lib/select2/dist/css/select2.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.21/datatables.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.dataTables.min.css" />
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    </environment>
+
+    <environment>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f" crossorigin="anonymous"></script>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+        <script src="~/lib/select2/dist/js/select2.js"></script>
+        <script src="~/lib/popper/popper.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.21/datatables.min.js"></script>
+        <script src="~/js/loadingOverlay.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+
+            $(window).on('load', function () {
+                $("#coverScreen").hide();
+            });
+            $(document).ajaxStart(function () {
+                console.log("Ajax start");
+                $("#coverScreen").show();
+            });
+            $(document).ajaxStop(function () {
+                console.log("Ajax Stop");
+                $("#coverScreen").hide();
+            });
+            jQuery(window).on('load', function () {
+                console.log("Ajax Load");
+                $("#coverScreen").hide();
+            });
+        </script>
+        <script src="~/js/HideShow.js"></script>
+        <script src="~/js/site.js"></script>
+    </environment>
+    <style>
+        #progressBackgroundFilter {
+            position: fixed;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            overflow: hidden;
+            background-color: transparent;
+            filter: alpha(opacity=50);
+            background-color: #000000;
+            opacity: 0.7;
+            z-index: 1100;
+        }
+
+        #processMessage {
+            position: fixed;
+            top: 30%;
+            left: 43%;
+            padding: 10px;
+            width: 14%;
+            z-index: 1101;
+            background-color: transparent;
+            text-align: center;
+            color: #000000;
+            text-shadow: 0px 0px 10px white;
+        }
+
+        h3 {
+            font-weight: bold;
+            font-size: 1.17em;
+            margin: 1em 0;
+        }
+
+        label.mandatory::after {
+            content: "*";
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="coverScreen" class="LockOn"></div>
+    <div id="form">
+        <header id="main-header">
+            <div>
+                <div id="headerLogo"></div>
+            </div>
+        </header>
+
+        <div id="main-container">
+            <h2 id="title">
+                AI Document Analysis Tool
+            </h2>
+
+            <div id="main-loading" style="display:none">
+                <div id="progressBackgroundFilter" style="background:#000000"></div>
+                <div id="processMessage" style="text-align:center">
+                    <h2 style="color:#000000;text-shadow: 0px 0px 10px white;">
+                        Loading. . .<br />
+                    </h2>
+                    <img src="~/resources/images/Loading.gif" />
+                </div>
+            </div>
+
+            <article>
+                @RenderSection("table", required: false)
+                @RenderBody()
+            </article>
+
+            <aside id="main-aside">
+                @RenderSection("Aside", required: false)
+            </aside>
+
+        </div> <!-- #main-container -->
+
+        <footer id="main-footer">
+            <div class="footer">
+                @RenderSection("Footer", required: false)
+            </div>
+            <div id="footerCopyright" class="footer">
+                <div>
+                    <span>©@DateTime.Now.Year </span><br />
+                </div>
+            </div>
+        </footer>
+    </div>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

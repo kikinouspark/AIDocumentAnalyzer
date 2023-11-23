@@ -1,0 +1,31 @@
+﻿@model DocumentRecognizerTest.Models.FileInfoModel
+
+@{
+    ViewData["Title"] = "AI Document Analysis Tool";
+}
+
+<style>
+    #coverScreen {
+        z-index: 9999;
+    }
+</style>
+
+
+<div class="text-left">
+    <form asp-controller="Home" asp-action="FileUploaded" method="post" enctype="multipart/form-data">
+        <p>Hello and Welcome to the Platform !!</p>
+        <p> Please have a go by uploading one of the testing dummy pdf files into the system located in the wwwroot path below: </p>
+        <p>\wwwroot\Testing_Files</p>
+        <br />
+        <br />
+        <input type="file" name="file" multiple required />
+        <RegularExpressionValidator id="file" runat="server" ControlToValidate="fileUpload"> </RegularExpressionValidator>
+        <hr />
+        <button type="submit" id="btnSubmit">Upload File</button>
+    </form>
+</div>
+
+<script>
+
+
+</script>
